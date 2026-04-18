@@ -1,0 +1,173 @@
+{
+  "name": "render-why",
+  "version": "1.0.0",
+  "description": "Why did my React component re-render? The useWhyRender() hook tells you in plain English — with autofix suggestions. A modern, zero-config why-did-you-render alternative for React 18, React 19, React Compiler, React Native, and Expo. No Babel, no monkey-patching, zero production cost.",
+  "license": "MIT",
+  "author": "Kenildev007",
+  "homepage": "https://github.com/Kenildev007/render-why#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kenildev007/render-why.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Kenildev007/render-why/issues"
+  },
+  "funding": "https://github.com/sponsors/Kenildev007",
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./rn": {
+      "types": "./dist/rn.d.ts",
+      "import": "./dist/rn.js",
+      "require": "./dist/rn.cjs"
+    },
+    "./flipper": {
+      "types": "./dist/flipper.d.ts",
+      "import": "./dist/flipper.js",
+      "require": "./dist/flipper.cjs"
+    },
+    "./redux": {
+      "types": "./dist/adapters/redux.d.ts",
+      "import": "./dist/adapters/redux.js",
+      "require": "./dist/adapters/redux.cjs"
+    },
+    "./zustand": {
+      "types": "./dist/adapters/zustand.d.ts",
+      "import": "./dist/adapters/zustand.js",
+      "require": "./dist/adapters/zustand.cjs"
+    },
+    "./jotai": {
+      "types": "./dist/adapters/jotai.d.ts",
+      "import": "./dist/adapters/jotai.js",
+      "require": "./dist/adapters/jotai.cjs"
+    },
+    "./query": {
+      "types": "./dist/adapters/query.d.ts",
+      "import": "./dist/adapters/query.js",
+      "require": "./dist/adapters/query.cjs"
+    },
+    "./valtio": {
+      "types": "./dist/adapters/valtio.d.ts",
+      "import": "./dist/adapters/valtio.js",
+      "require": "./dist/adapters/valtio.cjs"
+    },
+    "./mobx": {
+      "types": "./dist/adapters/mobx.d.ts",
+      "import": "./dist/adapters/mobx.js",
+      "require": "./dist/adapters/mobx.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "keywords": [
+    "react",
+    "react-19",
+    "react-18",
+    "react-compiler",
+    "react-native",
+    "expo",
+    "hooks",
+    "hook",
+    "useWhyRender",
+    "why-did-you-render",
+    "wdyr",
+    "why-did-this-render",
+    "why-did-component-render",
+    "rerender",
+    "re-render",
+    "rerenders",
+    "unnecessary-rerenders",
+    "wasted-renders",
+    "render-debug",
+    "react-debug",
+    "debug-render",
+    "react-debugger",
+    "performance",
+    "react-performance",
+    "react-profiler",
+    "react-devtools",
+    "memoization",
+    "useMemo",
+    "useCallback",
+    "react-memo",
+    "prop-diff",
+    "redux",
+    "zustand",
+    "jotai",
+    "tanstack-query",
+    "valtio",
+    "mobx",
+    "typescript"
+  ],
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-native": "*",
+    "react-native-flipper": "*",
+    "react-redux": ">=8.0.0",
+    "zustand": ">=4.0.0",
+    "jotai": ">=2.0.0",
+    "@tanstack/react-query": ">=5.0.0",
+    "valtio": ">=1.0.0",
+    "mobx-react-lite": ">=4.0.0"
+  },
+  "peerDependenciesMeta": {
+    "react-native": { "optional": true },
+    "react-native-flipper": { "optional": true },
+    "react-redux": { "optional": true },
+    "zustand": { "optional": true },
+    "jotai": { "optional": true },
+    "@tanstack/react-query": { "optional": true },
+    "valtio": { "optional": true },
+    "mobx-react-lite": { "optional": true }
+  },
+  "dependencies": {
+    "picocolors": "^1.1.1"
+  },
+  "devDependencies": {
+    "@tanstack/react-query": "^5.62.0",
+    "@testing-library/react": "^16.1.0",
+    "@types/node": "^22.10.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@types/react-redux": "^7.1.34",
+    "jotai": "^2.10.3",
+    "jsdom": "^25.0.1",
+    "mobx": "^6.13.5",
+    "mobx-react-lite": "^4.0.7",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-redux": "^9.2.0",
+    "redux": "^5.0.1",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "valtio": "^2.1.2",
+    "vitest": "^2.1.8",
+    "zustand": "^5.0.2"
+  }
+}

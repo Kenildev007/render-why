@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b0d10" />
+    <meta name="color-scheme" content="dark light" />
+
+    <title>render-why — Why did my React component re-render? | useWhyRender() hook</title>
+    <meta name="description" content="Find out why your React component re-rendered. The useWhyRender() hook gives plain-English diagnostics with autofix suggestions. Zero-config why-did-you-render alternative for React 19, React Compiler, React Native, and Expo." />
+    <meta name="keywords" content="react, react 19, react compiler, why did you render, why-did-you-render, wdyr, useWhyRender, react re-render, debug react renders, unnecessary rerenders, wasted renders, react performance, useMemo, useCallback, react native, expo, react hook" />
+    <meta name="author" content="Kenildev007" />
+    <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
+    <link rel="canonical" href="https://render-why.dev/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="render-why" />
+    <meta property="og:url" content="https://render-why.dev/" />
+    <meta property="og:title" content="render-why — Why did my React component re-render?" />
+    <meta property="og:description" content="Drop useWhyRender() into any component. Get plain-English diagnostics with autofix suggestions. Works with React 19, React Compiler, React Native, and Expo." />
+    <meta property="og:image" content="https://render-why.dev/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="render-why — Why did my React component re-render?" />
+    <meta name="twitter:description" content="The useWhyRender() hook tells you in plain English why your component re-rendered — with autofix suggestions. React 19, Compiler, RN, Expo." />
+    <meta name="twitter:image" content="https://render-why.dev/og.png" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "render-why",
+      "description": "React re-render debugger. The useWhyRender() hook tells you in plain English why a component re-rendered, what changed, and how to fix it.",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Cross-platform",
+      "programmingLanguage": ["TypeScript", "JavaScript"],
+      "url": "https://render-why.dev/",
+      "downloadUrl": "https://www.npmjs.com/package/render-why",
+      "license": "https://opensource.org/licenses/MIT",
+      "author": {
+        "@type": "Person",
+        "name": "Kenildev007"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "keywords": "react, react 19, react compiler, why-did-you-render alternative, useWhyRender, re-render debugger, unnecessary rerenders, react performance, react native, expo"
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I find out why my React component re-rendered?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Add useWhyRender('ComponentName', { ...props }) to the component. In development it logs which prop, hook, or context changed — and suggests the specific useCallback or useMemo fix."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is render-why compatible with the React Compiler?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. render-why is hook-first and never patches React internals, so it works cleanly with the React Compiler, React 19, Server Components, concurrent mode, and Strict Mode."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is render-why a why-did-you-render alternative?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. It replaces @welldone-software/why-did-you-render for modern React. No Babel plugin, no monkey-patching, zero production cost, and adapters for Redux, Zustand, Jotai, TanStack Query, Valtio, and MobX."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does render-why work in React Native and Expo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. render-why is pure JavaScript — no native module, no Metro transformer. It works in Expo Go, bare React Native, Fabric/Bridgeless, and React Native Web."
+          }
+        }
+      ]
+    }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>
+      <h1>render-why — Why did my React component re-render?</h1>
+      <p>
+        <strong>render-why</strong> is a React re-render debugger. Drop the
+        <code>useWhyRender()</code> hook into any component and get
+        plain-English diagnostics that tell you which prop, hook, or context
+        value changed — plus one-line autofix suggestions using
+        <code>useMemo</code> and <code>useCallback</code>.
+      </p>
+      <p>
+        A modern, zero-config alternative to
+        <em>why-did-you-render</em> (WDYR). Works with React 18, React 19,
+        the React Compiler, React Native, and Expo. No Babel plugin, no
+        monkey-patching React internals, zero production cost.
+      </p>
+      <p>
+        Install: <code>npm install render-why</code> ·
+        <a href="https://www.npmjs.com/package/render-why">View on npm</a> ·
+        <a href="https://github.com/Kenildev007/render-why">Source on GitHub</a>
+      </p>
+      <p>
+        Adapters for Redux, Zustand, Jotai, TanStack Query, Valtio, and MobX
+        surface wasted re-renders caused by selectors that return new
+        references with structurally equal values — the single biggest
+        source of unnecessary React re-renders.
+      </p>
+      <p><em>This page requires JavaScript for the interactive demo.</em></p>
+    </noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
