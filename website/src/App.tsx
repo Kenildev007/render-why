@@ -90,7 +90,7 @@ function Nav() {
             npm
           </a>
           <a
-            href="https://github.com/your-org/render-why"
+            href="https://github.com/Kenildev007/render-why"
             target="_blank"
             rel="noopener"
             className="nav-pill"
@@ -727,7 +727,7 @@ enableFlipperLogger();`}</Code>
           </div>
           <div className="footer-links">
             <a href="https://www.npmjs.com/package/render-why" target="_blank" rel="noopener">npm</a>
-            <a href="https://github.com/your-org/render-why" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://github.com/Kenildev007/render-why" target="_blank" rel="noopener">GitHub</a>
             <a href="#quickstart">docs</a>
             <a href="#live">demos</a>
           </div>
