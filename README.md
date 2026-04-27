@@ -2,12 +2,18 @@
 
 **The re-render debugger modern React deserves.**
 
+[![npm](https://img.shields.io/npm/v/render-why)](https://www.npmjs.com/package/render-why)
+[![npm downloads](https://img.shields.io/npm/dm/render-why)](https://www.npmjs.com/package/render-why)
+[![license](https://img.shields.io/npm/l/render-why)](./LICENSE)
+
 Drop `useWhyRender()` into any component and get a plain-English explanation of why it re-rendered, what changed, and how to fix it — with one-line autofix suggestions.
 
 - One hook. No Babel. No monkey-patching React.
 - Works with **React 18, React 19, the React Compiler, React Native, and Expo Go**.
 - Zero production cost (tree-shaken via `process.env.NODE_ENV`).
 - Adapters for Redux, Zustand, Jotai, TanStack Query, Valtio, MobX.
+
+**[View on npm](https://www.npmjs.com/package/render-why) · [GitHub](https://github.com/Kenildev007/render-why)**
 
 ---
 
