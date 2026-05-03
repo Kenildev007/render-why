@@ -6,6 +6,7 @@ export type GlobalOptions = {
   include?: Array<string | RegExp>;
   exclude?: Array<string | RegExp>;
   level?: Level;
+  enableInProduction?: boolean;
   ignore?: {
     components?: string[];
     props?: string[];
@@ -30,6 +31,9 @@ export const disableWhyRender = (): void => {
 };
 
 export const getGlobalConfig = (): GlobalOptions | null => config;
+
+export const isProductionTrackingEnabled = (): boolean =>
+  config?.enableInProduction === true;
 
 const matchOne = (name: string, m: string | RegExp): boolean =>
   typeof m === 'string' ? m === name : m.test(name);

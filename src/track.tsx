@@ -1,6 +1,7 @@
 import { memo, createElement, type ComponentType } from 'react';
 import { useWhyRender } from './useWhyRender';
 import type { Opts } from './types';
+import { isProductionTrackingEnabled } from './global';
 
 type TrackOpts<P extends object> = Opts<P> & { name?: string };
 
@@ -15,7 +16,11 @@ export function track<P extends object>(
   opts?: TrackOpts<P>,
 ): ComponentType<P> {
   // In production the whole wrapper collapses to the original component.
-  if (process.env.NODE_ENV === 'production') return Component;
+  if (
+    process.env.NODE_ENV === 'production' &&
+    !isProductionTrackingEnabled()
+  )
+    return Component;
 
   const name = resolveName(Component as ComponentType<unknown>, opts?.name);
 
@@ -32,7 +37,11 @@ export function trackMemo<P extends object>(
   Component: ComponentType<P>,
   opts?: TrackOpts<P>,
 ): ComponentType<P> {
-  if (process.env.NODE_ENV === 'production') return memo(Component) as unknown as ComponentType<P>;
+  if (
+    process.env.NODE_ENV === 'production' &&
+    !isProductionTrackingEnabled()
+  )
+    return memo(Component) as unknown as ComponentType<P>;
   const tracked = track(Component, opts);
   const Wrapped = memo(tracked) as unknown as ComponentType<P>;
   (Wrapped as { displayName?: string }).displayName = `trackMemo(${resolveName(

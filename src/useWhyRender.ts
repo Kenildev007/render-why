@@ -10,6 +10,7 @@ import {
   isRenderKindReportable,
   getGlobalIgnoredProps,
   isReasonIgnored,
+  isProductionTrackingEnabled,
 } from './global';
 import type { Opts, RenderEvent, DiffResult } from './types';
 
@@ -66,7 +67,11 @@ export function useWhyRender<T extends object>(
 
   // Bundler-friendly DCE guard: when NODE_ENV === 'production' the whole
   // body below is dead code and gets tree-shaken by Vite/Webpack/Metro/esbuild.
-  if (process.env.NODE_ENV === 'production') return;
+  if (
+    process.env.NODE_ENV === 'production' &&
+    !isProductionTrackingEnabled()
+  )
+    return;
 
   // Runtime SSR/RSC guard — server has no window.
   if (typeof window === 'undefined') return;

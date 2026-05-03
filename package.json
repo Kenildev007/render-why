@@ -126,25 +126,41 @@
     "typescript"
   ],
   "peerDependencies": {
+    "@tanstack/react-query": ">=5.0.0",
+    "jotai": ">=2.0.0",
+    "mobx-react-lite": ">=4.0.0",
     "react": ">=16.8.0",
     "react-native": "*",
     "react-native-flipper": "*",
     "react-redux": ">=8.0.0",
-    "zustand": ">=4.0.0",
-    "jotai": ">=2.0.0",
-    "@tanstack/react-query": ">=5.0.0",
     "valtio": ">=1.0.0",
-    "mobx-react-lite": ">=4.0.0"
+    "zustand": ">=4.0.0"
   },
   "peerDependenciesMeta": {
-    "react-native": { "optional": true },
-    "react-native-flipper": { "optional": true },
-    "react-redux": { "optional": true },
-    "zustand": { "optional": true },
-    "jotai": { "optional": true },
-    "@tanstack/react-query": { "optional": true },
-    "valtio": { "optional": true },
-    "mobx-react-lite": { "optional": true }
+    "react-native": {
+      "optional": true
+    },
+    "react-native-flipper": {
+      "optional": true
+    },
+    "react-redux": {
+      "optional": true
+    },
+    "zustand": {
+      "optional": true
+    },
+    "jotai": {
+      "optional": true
+    },
+    "@tanstack/react-query": {
+      "optional": true
+    },
+    "valtio": {
+      "optional": true
+    },
+    "mobx-react-lite": {
+      "optional": true
+    }
   },
   "dependencies": {
     "picocolors": "^1.1.1"
@@ -169,5 +185,8 @@
     "valtio": "^2.1.2",
     "vitest": "^2.1.8",
     "zustand": "^5.0.2"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-darwin-arm64": "^4.60.2"
   }
 }
